@@ -1,5 +1,6 @@
 package com.dv.bootstrap;
 
+import com.dv.sample.SampleService;
 import com.dv.sample.SampleTransient;
 import org.qi4j.api.activation.ActivationException;
 import org.qi4j.api.structure.Module;
@@ -18,6 +19,8 @@ public class Main {
                 public void assemble(ModuleAssembly module) throws AssemblyException {
 
                     module.transients(SampleTransient.class);
+
+                    module.services(SampleService.class);
                 }
             };
         } catch (AssemblyException | ActivationException e) {
